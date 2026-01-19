@@ -31,9 +31,15 @@ export default function HomeScreen() {
           <Card.Content>
             <Text variant="titleMedium">Today’s operations</Text>
             <View style={styles.chipRow}>
-              <Chip icon="solar-power">5 installs active</Chip>
-              <Chip icon="warehouse">2 stock alerts</Chip>
-              <Chip icon="calendar-clock">3 inspections booked</Chip>
+              <Chip icon="solar-power" style={styles.chip}>
+                5 installs active
+              </Chip>
+              <Chip icon="warehouse" style={styles.chip}>
+                2 stock alerts
+              </Chip>
+              <Chip icon="calendar-clock" style={styles.chip}>
+                3 inspections booked
+              </Chip>
             </View>
             <Button
               mode="contained"
@@ -110,8 +116,11 @@ const styles = StyleSheet.create({
   chipRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
     marginVertical: 12,
+  },
+  chip: {
+    marginRight: 8,
+    marginBottom: 8,
   },
   listRow: {
     flexDirection: 'row',

@@ -73,10 +73,10 @@ export default function SearchScreen() {
                 {item.phase} • {item.status}
               </Text>
               <View style={styles.tagRow}>
-                <Chip icon="solar-power" compact>
+                <Chip icon="solar-power" compact style={styles.tagChip}>
                   {item.systemSize}
                 </Chip>
-                <Chip icon="progress-check" compact>
+                <Chip icon="progress-check" compact style={styles.tagChip}>
                   {item.phase}
                 </Chip>
               </View>
@@ -133,8 +133,11 @@ const styles = StyleSheet.create({
   },
   tagRow: {
     flexDirection: 'row',
-    gap: 8,
     marginVertical: 12,
+  },
+  tagChip: {
+    marginRight: 8,
+    marginBottom: 8,
   },
   emptyState: {
     flex: 1,

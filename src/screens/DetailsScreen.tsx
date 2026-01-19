@@ -31,13 +31,13 @@ export default function DetailsScreen() {
             {phase} • {systemSize || 'System size TBD'}
           </Text>
           <View style={styles.tagsContainer}>
-            <Chip icon="solar-power" mode="outlined">
+            <Chip icon="solar-power" mode="outlined" style={styles.tagChip}>
               {systemSize || 'Pending'}
             </Chip>
-            <Chip icon="progress-check" mode="outlined">
+            <Chip icon="progress-check" mode="outlined" style={styles.tagChip}>
               {status || 'On track'}
             </Chip>
-            <Chip icon="map-marker" mode="outlined">
+            <Chip icon="map-marker" mode="outlined" style={styles.tagChip}>
               Job ID {id}
             </Chip>
           </View>
@@ -90,10 +90,10 @@ export default function DetailsScreen() {
         <Divider style={styles.divider} />
 
         <View style={styles.actions}>
-          <Button mode="contained" icon="camera">
+          <Button mode="contained" icon="camera" style={styles.actionButton}>
             Upload site photos
           </Button>
-          <Button mode="outlined" icon="clipboard-check-outline">
+          <Button mode="outlined" icon="clipboard-check-outline" style={styles.actionButton}>
             Request approval
           </Button>
           <Button mode="text" onPress={() => navigation.goBack()}>
@@ -125,7 +125,10 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     padding: 16,
     backgroundColor: '#fff',
-    gap: 8,
+  },
+  tagChip: {
+    marginRight: 8,
+    marginBottom: 8,
   },
   divider: {
     marginVertical: 8,
@@ -153,6 +156,8 @@ const styles = StyleSheet.create({
   },
   actions: {
     padding: 16,
-    gap: 10,
+  },
+  actionButton: {
+    marginBottom: 10,
   },
 });
